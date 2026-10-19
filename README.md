@@ -12,6 +12,17 @@ A busy pet owner needs help staying consistent with pet care. They want an assis
 
 Your job is to design the system first (UML), then implement the logic in Python, then connect it to the Streamlit UI.
 
+## Sample Output
+Today's Schedule
+08:00 - Morning walk for Mochi (30 min, priority: High)
+08:45 - Breakfast for Mochi (10 min, priority: High)
+09:00 - Medication for Luna (5 min, priority: High)
+17:30 - Playtime for Luna (15 min, priority: Medium)
+
+## Implementation Summary
+
+`Owner` keeps the household's pets, and each `Pet` stores its care `Task`s. Tasks hold details such as duration, priority, and time slot, and can be marked complete or edited. `Scheduler` gathers tasks across the owner's pets, estimates available time, and orders tasks by priority. The sample script in `main.py` prints those tasks by their assigned time slot.
+
 ## What you will build
 
 Your final app should:
@@ -92,3 +103,4 @@ Describe your app in numbered steps so a reader can follow along without watchin
 5. <!-- Add more steps as needed -->
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+
