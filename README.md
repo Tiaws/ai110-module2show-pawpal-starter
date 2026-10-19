@@ -106,14 +106,37 @@ The scheduler includes these lightweight scheduling helpers:
 | Conflict detection | `Scheduler.detect_time_conflicts()` | Returns warning strings when two or more incomplete tasks share the exact same time slot and date, including across different pets. Tasks without a time are skipped; a missing due date is treated as today. It detects matching start times, not duration overlaps. |
 | Recurring tasks | `Scheduler.mark_task_completed(task, completed_on=None)` | Marks an owned task complete. `"Daily"` creates the next task one day later; `"Weekly"` creates one seven days later, calculated with `timedelta`. The new task is assigned to the same pet with a new task ID. One-time tasks do not create another occurrence. |
 
-## 📸 Demo Walkthrough
+## 🚀 Demo Walkthrough
 
-Describe your app in numbered steps so a reader can follow along without watching a video:
+### 1. UI Features & User Actions
+* **Owner & Pet Registration:** Easily add and manage multiple pets under a single owner profile.
+* **Task Management:** Add custom care tasks including descriptions, specific time slots, durations, and priority levels (High/Medium/Low).
+* **Smart Daily Plan:** View a structured, conflict-free schedule generated automatically by the backend scheduler.
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+### 2. Example Workflow
+1. **Setup:** Launch the app and input the owner's name, then add two pets: *Max (Dog)* and *Luna (Cat)*.
+2. **Add Tasks:** Schedule a High-Priority "Morning Walk" for Max at 08:00, a Medium-Priority "Feeding" at 08:30, and a "Medication" reminder.
+3. **View Schedule:** Navigate to the daily schedule view to see your tasks organized chronologically with conflict warnings (if any overlap occurs).
+
+### 3. Key Scheduler Behaviors
+* **Sorting & Filtering:** Automatically organizes tasks chronologically using `Scheduler.sort_tasks_by_time()`.
+* **Conflict Detection:** Flags overlapping time slots to alert the user of scheduling bottlenecks.
+* **Recurring Tasks:** Automatically generates the next cycle's due date when a recurring daily/weekly task is completed.
+
+### 4. Sample CLI Output (`main.py`)
+```text
+=== PawPal+ System Initialized ===
+Owner: Sarah
+Pets registered: Max (Dog), Luna (Cat)
+
+--- Added Tasks ---
+[Max] Morning Walk - 08:00 (Duration: 30 mins, Priority: High)
+[Max] Feeding - 08:15 (Duration: 15 mins, Priority: Medium) -> ⚠️ CONFLICT DETECTED with Morning Walk!
+[Luna] Vet Medication - 09:00 (Duration: 10 mins, Priority: High)
+
+--- Today's Sorted Schedule ---
+1. 08:00 | Max: Morning Walk (High)
+2. 08:15 | Max: Feeding (Medium)
+3. 09:00 | Luna: Vet Medication (High)
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->

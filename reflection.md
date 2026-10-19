@@ -63,13 +63,13 @@ Relationships: Linked hierarchically from Owner to Pet (one-to-many), Pet to Tas
 
 **a. What you tested**
 
-- What behaviors did you test?
-- Why were these tests important?
+- I tested marking a task complete, by adding a task to a pet, sorting tasks by time, and filtering by pet and completion status. I also tested daily and weekly recurrence, confirmed one-time tasks do not repeat, and checked that duplicate task times are reported for the same pet and across pets.
+
 
 **b. Confidence**
 
-- How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
+- I am reasonably confident in the tested behavior because all 10 tests pass. 
+- If I had more time, I would test invalid or missing time formats, tasks with the same time on different dates, completed tasks in conflict checks. I would also test empty schedules and recurrence when a task has no due date.
 
 ---
 
@@ -77,12 +77,12 @@ Relationships: Linked hierarchically from Owner to Pet (one-to-many), Pet to Tas
 
 **a. What went well**
 
-- What part of this project are you most satisfied with?
+- Building the UML logic and tests helped verify that these features work as intended.
 
 **b. What you would improve**
 
-- If you had another iteration, what would you improve or redesign?
+- I would make daily plans to use the asked date and the owner's actual available hours.
 
 **c. Key takeaway**
 
-- What is one important thing you learned about designing systems or working with AI on this project?
+- I learned that the design should match what the code actually implemented. Tests are useful for checking individual behaviors. AI suggestions can help me get started, but I still need to read the code and verify that it meets the project requirements.
