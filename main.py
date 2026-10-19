@@ -35,7 +35,7 @@ def main() -> None:
             description="Medication",
             duration=5,
             priority="High",
-            time_slot="09:00",
+            time_slot="08:00",
         )
     )
     cat.add_task(
@@ -49,6 +49,9 @@ def main() -> None:
     )
 
     scheduler = Scheduler(owner=owner)
+    for warning in scheduler.detect_time_conflicts():
+        print(warning)
+
     plan = sorted(
         scheduler.generate_daily_plan(),
         key=lambda task: task.time_slot,

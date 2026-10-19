@@ -83,14 +83,14 @@ Sample test output:
 
 ## 📐 Smarter Scheduling
 
-> Fill in once you've implemented scheduling logic.
+The scheduler includes these lightweight scheduling helpers:
 
 | Feature | Method(s) | Notes |
 |---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+| Task sorting | `Scheduler.sort_by_time()`, `Scheduler.generate_daily_plan()` | `sort_by_time()` returns all tasks in zero-padded `HH:MM` order without changing the pets' stored task lists. `generate_daily_plan()` orders all tasks by priority: High, Medium, Low, then unrecognized priorities. |
+| Filtering | `Scheduler.filter_tasks(pet=None, is_completed=None)` | Optionally select one of the owner's pets and/or tasks matching the completion status. Omitting a filter leaves that dimension unrestricted. |
+| Conflict detection | `Scheduler.detect_time_conflicts()` | Returns warning strings when two or more incomplete tasks share the exact same time slot and date, including across different pets. Tasks without a time are skipped; a missing due date is treated as today. It detects matching start times, not duration overlaps. |
+| Recurring tasks | `Scheduler.mark_task_completed(task, completed_on=None)` | Marks an owned task complete. `"Daily"` creates the next task one day later; `"Weekly"` creates one seven days later, calculated with `timedelta`. The new task is assigned to the same pet with a new task ID. One-time tasks do not create another occurrence. |
 
 ## 📸 Demo Walkthrough
 
@@ -103,4 +103,3 @@ Describe your app in numbered steps so a reader can follow along without watchin
 5. <!-- Add more steps as needed -->
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
-

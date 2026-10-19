@@ -18,6 +18,7 @@ classDiagram
         +int duration
         +string priority
         +string time_slot
+        +date due_date
         +bool is_completed
         +mark_completed()
         +edit_details(new_details: dict)
@@ -26,7 +27,11 @@ classDiagram
     class Scheduler {
         +Owner owner
         +get_available_time(date: date) int
+        +sort_by_time() List~Task~
+        +filter_tasks(pet: Pet, is_completed: bool) List~Task~
+        +detect_time_conflicts() List~str~
         +generate_daily_plan() List~Task~
+        +mark_task_completed(task: Task, completed_on: date?) Task?
     }
 
     Owner "1" --> "many" Pet : has
