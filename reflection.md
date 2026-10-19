@@ -1,5 +1,9 @@
 # PawPal+ Project Reflection
 
+- Enter owner and pet information.
+- Add or edit care tasks, including their duration and priority.
+- Generate and view a daily care plan that accounts for available time and task priorities.
+
 ## 1. System Design
 
 **a. Initial design**
