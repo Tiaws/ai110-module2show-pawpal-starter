@@ -23,6 +23,20 @@ Today's Schedule
 
 `Owner` keeps the household's pets, and each `Pet` stores its care `Task`s. Tasks hold details such as duration, priority, and time slot, and can be marked complete or edited. `Scheduler` gathers tasks across the owner's pets, estimates available time, and orders tasks by priority. The sample script in `main.py` prints those tasks by their assigned time slot.
 
+## Testing PawPal+
+Confidence Level: 2 stars
+python -m pytest
+============================= test session starts ==============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.7.0
+rootdir: C:\Users\jijot\OneDrive - The University of Texas at Dallas\Documents\Code pat\ai110-module2show-pawpal-starter
+plugins: anyio-4.15.1
+collected 10 items                                                              
+
+tests\test_pawpal.py ..........                                           [100%]
+
+============================== 10 passed in 0.06s ==============================
+(.venv) PS C:\Users\jijot\OneDrive - The University of Texas at Dallas\Documents\Code pat\ai110-module2show-pawpal-starter> 
+
 ## What you will build
 
 Your final app should:
